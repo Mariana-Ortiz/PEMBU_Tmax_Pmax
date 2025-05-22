@@ -31,11 +31,56 @@ Script en Python (usando pandas, matplotlib, geopandas) que:
 - Micromamba o Conda
 - Paquetes: `pandas`, `geopandas`, `matplotlib`, `numpy`, `scipy`
 
+🧾 Descripción del trabajo realizado
+
+En este proyecto desarrollé una solución automatizada para procesar y graficar datos meteorológicos del programa PEMBU, con base en los archivos .CSV proporcionados para cada estación y mes del año 2022.
+
+🔧 Procesamiento de datos en Bash
+
+Primero, elaboré un script en Bash que recorre automáticamente los archivos correspondientes a las nueve estaciones (ENP1 a ENP9) y los doce meses del año. Este script:
+Extrae la latitud y longitud desde el encabezado de cada archivo.
+Identifica los valores de temperatura máxima (Tmax) desde la segunda columna y precipitación máxima (Pmax) desde la novena columna.
+Genera un archivo consolidado llamado tmax_pmax_pembu.csv, que contiene por fila: la estación, ubicación, valores máximos y la fecha del mes correspondiente.
+Utiliza encabezados estandarizados para asegurar compatibilidad con el script de graficación.
+
+🐍 Configuración del entorno Python
+Para poder ejecutar el script graficar.py (provisto en el repositorio del curso), instalé y configuré un entorno de Python usando Micromamba, ya que este método permite mantener un entorno limpio con las bibliotecas necesarias. Instalé:
+
+pandas
+geopandas
+matplotlib
+scipy
+numpy
+
+Activé el entorno antes de correr los scripts Python.
+
+📈 Generación de gráficas
+
+Con el entorno listo y el archivo CSV generado, ejecuté el script graficar.py para crear gráficas de Tmax y Pmax. Durante este proceso corregí algunos errores del código original, como:
+Cambiar Fecha por Date en el CSV para que el script pudiera reconocer correctamente la columna de fechas.
+Corregir una variable mal escrita (Date sin definir, cuando debía ser date).
+Declarar la codificación UTF-8 en el script para evitar errores por acentos o caracteres especiales.
+Las gráficas generadas muestran la variación mensual de temperatura máxima y precipitación máxima por estación.
+
+🌐 Publicación del proyecto
+
+Finalmente, creé un repositorio público en GitHub donde subí:
+El script en Bash (procesar_datos.sh)
+El script de graficación (graficar.py)
+El archivo CSV generado (tmax_pmax_pembu.csv)
+
+Este documento README.md
+
+Algunas imágenes resultantes de las gráficas
+
+Esto permite que cualquier usuario pueda reproducir el análisis o extenderlo con nuevas variables.
 ## 🖥️ Ejecución
 
 ```bash
 bash procesar_datos.sh
 python graficar.py --file tmax_pmax_pembu.csv --variable Tmax
 python graficar.py --file tmax_pmax_pembu.csv --variable Pmax
+
+
 
 
