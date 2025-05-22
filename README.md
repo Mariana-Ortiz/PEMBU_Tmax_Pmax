@@ -12,6 +12,9 @@ Script en Bash que:
 - Genera el archivo `tmax_pmax_pembu.csv` con la estructura requerida.
 - Dentro del código viene toda la explicación detallada
 
+### 🔹 `tmax_pmax_pembu.csv`
+Script en Bash que contiene cada los valores de Tmax y Pmax para cada una de las estaciones ENP (de la 1 a la 9)
+
 ### 🔹 `graficar.py`
 Script en Python (usando pandas, matplotlib, geopandas) que:
 
