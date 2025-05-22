@@ -4,12 +4,13 @@
 Este repositorio contiene los scripts desarrollados para analizar datos de las estaciones meteorológicas del programa PEMBU (UNAM), usando herramient>
 ## Scripts incluidos
 
-### 🔹 `variables_temp_precip_pembu.sh`
+### 🔹 `extraer_datos_temp_precip.sh`
 Script en Bash que:
 
 - Lee los archivos mensuales de cada estación (PEMBU).
 - Extrae latitud, longitud, temperatura máxima (`Tmax`) y precipitación máxima (`Pmax`).
 - Genera el archivo `tmax_pmax_pembu.csv` con la estructura requerida.
+- Dentro del código viene toda la explicación detallada
 
 ### 🔹 `graficar.py`
 Script en Python (usando pandas, matplotlib, geopandas) que:
