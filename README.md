@@ -78,6 +78,8 @@ Esto permite que cualquier usuario pueda reproducir el análisis o extenderlo co
 
 ```bash
 bash procesar_datos.sh
+python3 graficar.py --file tmax_pmax_pembu.csv --variable Pmax
+
 python3 graficar2.py tmax_pmax_pembu.csv Tmax
 python3 graficar2.py tmax_pmax_pembu.csv Pmax
 
