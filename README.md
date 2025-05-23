@@ -24,10 +24,10 @@ Script en Python (usando pandas, matplotlib, geopandas) que:
 - Lee el CSV generado anteriormente.
 - Produce gráficas mensuales de `Tmax` y `Pmax` por estación.
 
-## 📊 Ejemplo de gráficas generadas
+## 📊 Ejemplo del formato de gráficas generadas y que están dentro de la carpeta imagenes
 
-![Ejemplo Tmax](output_figures/temp_max_2022-05-01.png)
-![Ejemplo Pmax](output_figures/prec_max_2022-02-01.png)
+![Ejemplo Tmax](imagenes/temp_max_2022-05-01.png)
+![Ejemplo Pmax](imagenes/prec_max_2022-02-01.png)
 
 ## ⚙️ Requisitos para poder correr los scripts:
 Tener instalados
