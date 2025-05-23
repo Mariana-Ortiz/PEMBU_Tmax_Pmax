@@ -63,14 +63,15 @@ Hay que asegurarse de activar correctamente el entorno de microbamba desde termi
 📈 Para la generación de gráficas
 
 Con el entorno listo y el archivo CSV generado (tmax_pmax_pembu2.csv), se ejecutó el script graficar3.py para crear las gráficas de Tmax y Pmax. Durante este proceso corregí algunos errores del código original, como:
-Cambiar Fecha por Date en el CSV para que el script pudiera reconocer correctamente la columna de fechas ya que originalmente yo en mi archivo de salida .csv. había nombrado así
-
+Cambiar Fecha por Date en el CSV para que el script pudiera reconocer correctamente la columna de fechas ya que originalmente yo en mi archivo de salida .csv. había nombrado así.
 En mi caso, tuve que declarar la codificación UTF-8 en el script para evitar errores por acentos o caracteres especiales.
 Las gráficas generadas muestran la variación mensual de temperatura máxima y precipitación máxima por estación.
 
-Desde terminal, escribimos los siguientes comandos:
-## 🖥️ Ejecución
 
+## 🖥️ Ejecución
+Desde terminal, escribimos los siguientes comandos:
+python3 grafica3.py tmax_pmax_pembu.csv Tmax  (para graficas de Tmax)
+python3 grafica3.py tmax_pmax_pembu.csv Pmax  (para obtener graficas de Pmax)
 
 🌐 Publicación del proyecto
 
