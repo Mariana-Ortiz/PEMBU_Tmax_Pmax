@@ -70,8 +70,8 @@ Las gráficas generadas muestran la variación mensual de temperatura máxima y 
 
 ## 🖥️ Ejecución
 Desde terminal, escribimos los siguientes comandos:
-python3 grafica3.py tmax_pmax_pembu.csv Tmax  (para graficas de Tmax)
-python3 grafica3.py tmax_pmax_pembu.csv Pmax  (para obtener graficas de Pmax)
+- python3 grafica3.py tmax_pmax_pembu.csv Tmax  (para graficas de Tmax)
+- python3 grafica3.py tmax_pmax_pembu.csv Pmax  (para obtener graficas de Pmax)
 
 🌐 Publicación del proyecto
 
