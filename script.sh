@@ -16,13 +16,16 @@
 # y se guarda todo en un archivo CSV llamado 'tmax_pmax_pembu2.csv'.
 
 
-# Definimos el nombre del archivo donde voy a guardar todos los resultados combinados.
+
 OUTPUT="tmax_pmax_pembu2.csv"
-# Escribimos la primera línea del archivo, que son los nombres de las columnas (el encabezado).
+# Escribimos la primera línea del archivo con los encabezados de las columnas
+# Usamos `echo` para escribir texto y `>` para redirigir la salida a un archivo
 echo "Estacion,Longitud,Latitud,Tmax,Pmax,Date" > "$OUTPUT"
+
 # Esta es la ruta base donde están guardados todos los archivos CSV de cada estación y mes.
 BASE="/LUSTRE/cursos/2025/semestre2/gnulinux/a.8134/PEMBU"
-# Para revisar los datos de las 9 estaciones correspondientes a las ENP de ENP1 a ENP9, hacemos uso de la estructura del for.
+# Para revisar los datos de las 9 estaciones correspondientes a las ENP de ENP1 a ENP9, hacemos uso de la estructura del for 
+# Estructura del `for` vista en clase, útil para recorrer series numéricas o listas.
 for ENP in {1..9}; do
 # Con la variable ESTACION, se agrega  el nombre de la estación, por ejemplo ENP1, ENP2, etc.
   ESTACION="ENP$ENP"
@@ -30,7 +33,11 @@ for ENP in {1..9}; do
   for MES in {01..12}; do
 # A continuación, el nombre completo del archivo que quiero revisar, por ejemplo: 2022-01-ENP1-L1.CSV
     ARCHIVO="$BASE/2022-$MES-$ESTACION-L1.CSV"
-# Se revisa si el archivo realmente existe.
+# Se revisa si el archivo realmente existe.  Usamos `tail -n +2` para saltar la primera línea (encabezado) del archivo CSV original
+# `cut -d ',' -f` extrae solo las columnas que necesitamos:
+# Longitud (3), Latitud (4), Tmax (6), Pmax (7), Fecha (9)
+# Luego `awk` permite añadir el nombre de la estación al inicio de cada fila extraída
+# Finalmente se añade todo al archivo de salida con `>>
     if [[ -f "$ARCHIVO" ]]; then
       # Buscamos la latitud dentro del encabezado del archivo (normalmente en las primeras líneas).
       LAT=$(grep -i "Lat" "$ARCHIVO" | grep -oP "Lat\s*[:=]?\s*\K[0-9.]+")
